@@ -1,0 +1,11 @@
+Package: DoSimPFI2011
+Title: Implement simulation in the paper 'Parametric fractional imputation for missing data analysis'
+Version: 0.0.0.9000
+Authors@R: person("Taeseok", "Park", email="tspark@tamu.edu", role = c("aut", "cre"))
+Description: Reproducible process of the simulation in <doi: 10.1093/biomet/asq073>. 
+    Provide point estimators and variance estimators for both incomplete and complete data given parameters.
+    There are two options to implement, 'fractional imputation' and 'calibration fractional imputation'
+License: usethis::use_gpl3_license() 
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
