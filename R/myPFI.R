@@ -39,7 +39,7 @@ myPFI <- function(n, beta, sigma, phi, M=100, max.iter=50, eps=1e-09, B=2000){
   if (B<=0 | B%%1!=0) stop("The number of bootstrap process, B, should be positive integer")
 
   # Data generation
-  source('r/Data_generation.R')
+  devtools::source_url("https://github.com/tspark422/DoSimPFI2011/blob/main/R/Data_generation.R?raw=TRUE")
   rst.eta1 <- matrix(0, nrow=B, ncol=3)
   rst.eta2 <- matrix(0, nrow=B, ncol=3)
   rst.eta3 <- matrix(0, nrow=B, ncol=3)
