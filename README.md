@@ -22,14 +22,14 @@ devtools::install_github("tspark422/DoSimPFI2011")
 
 ## Usage
 
-You can change parameters in simulation if they are compatible. For
+You can change parameters in the simulation if they are compatible. For
 example, beta can be any vector if it is two-dimensional. However, what
 this function provides remains unchanged as the simulation. That is,
 $\eta_{1} = \mathit{E} \left( Y_{1} \right)$,
 $\eta_{2} = \mathit{E} \left( Y_{2} \right)$, $\eta_{3} = \beta_{1}$,
-and $\eta_{4} = pr\left( y_{1} < 3 \right)$. This is a basic example
-which shows you how to reproduce the simulation: Use fractional
-imputation method with the original simulation setting.
+and $\eta_{4} = pr\left( y_{1} < 3 \right)$.  
+This is a basic example which shows you how to reproduce the simulation:
+Use fractional imputation method with the original simulation setting.
 
 ``` r
 library(DoSimPFI2011)
@@ -43,7 +43,7 @@ suppressWarnings({
  point_estimator_eta1 <- colMeans(res_FI$eta1)
  point_estimator_eta1
 })
-#> [1] 2.429938002 0.009138512 0.007172959
+#> [1] 2.373205427 0.009457723 0.007376443
 ```
 
 This is another example using calibration fractional imputation method
@@ -61,29 +61,5 @@ suppressWarnings({
  point_estimator_eta2 <- colMeans(res_CFI$eta2)
  point_estimator_eta2
 })
-#> [1] 0.447705562 0.001593895 0.001239454
+#> [1] 0.467410081 0.001595021 0.001246910
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
