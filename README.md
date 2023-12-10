@@ -8,7 +8,7 @@
 
 The goal of DoSimPFI2011 is to reproduce simulation section in
 Parametric fractional imputation for missing data analysis (Kim,
-[2011](https://%20doi:%2010.1093/biomet/asq073)).
+[2011](https://doi.org/10.1093/biomet/asq073)).
 
 ## Installation
 
