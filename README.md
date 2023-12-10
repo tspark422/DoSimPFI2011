@@ -23,7 +23,7 @@ devtools::install_github("tspark422/DoSimPFI2011")
 ## Usage
 
 You can change parameters in simulation if they are compatible. For
-example, beta can be any vector if it is two-dimensional. However, What
+example, beta can be any vector if it is two-dimensional. However, what
 this function provides remains unchanged as the simulation. That is,
 $\eta_{1} = \mathit{E} \left( Y_{1} \right)$,
 $\eta_{2} = \mathit{E} \left( Y_{2} \right)$, $\eta_{3} = \beta_{1}$,
@@ -49,12 +49,8 @@ suppressWarnings({
  point_estimator_eta2 <- colMeans(res_CFI$eta2)
  print(point_estimator_eta2)
 })
-#> ℹ SHA-1 hash of file is "343099b74cec49239b107eca4246083f6f2d59c3"
-#> ℹ SHA-1 hash of file is "8a8c6a8be122ca158f5f3a9988351cbdceb5e42d"
-#> [1] 2.398089131 0.009496556 0.007458427
-#> ℹ SHA-1 hash of file is "34595737875a2c3d799e42ddac78319cfae175ce"
-#> ℹ SHA-1 hash of file is "8a8c6a8be122ca158f5f3a9988351cbdceb5e42d"
-#> [1] 0.434894703 0.001571627 0.001232789
+#> [1] 2.409529727 0.009557791 0.007499019
+#> [1] 0.423092038 0.001568395 0.001220905
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?

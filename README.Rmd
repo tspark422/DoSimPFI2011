@@ -31,7 +31,7 @@ devtools::install_github("tspark422/DoSimPFI2011")
 
 ## Usage
 
-You can change parameters in simulation if they are compatible. For example, beta can be any vector if it is two-dimensional. However, What this function provides remains unchanged as the simulation. That is, $\eta_{1} = \mathit{E} \left( Y_{1} \right)$, $\eta_{2} = \mathit{E} \left( Y_{2} \right)$, $\eta_{3} = \beta_{1}$, and $\eta_{4} = pr\left( y_{1} < 3 \right)$.
+You can change parameters in simulation if they are compatible. For example, beta can be any vector if it is two-dimensional. However, what this function provides remains unchanged as the simulation. That is, $\eta_{1} = \mathit{E} \left( Y_{1} \right)$, $\eta_{2} = \mathit{E} \left( Y_{2} \right)$, $\eta_{3} = \beta_{1}$, and $\eta_{4} = pr\left( y_{1} < 3 \right)$.
 This is a basic example which shows you how to reproduce the simulation:
 
 ```{r example}
