@@ -20,13 +20,38 @@ You can install the development version of DoSimPFI2011 from
 devtools::install_github("tspark422/DoSimPFI2011")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+You can change parameters in simulation if they are compatible. For
+example, beta can be any vector if it is two-dimensional.  
+$\eta_{1} = \mathit{E} \left( Y_{1} \right)$ This is a basic example
+which shows you how to reproduce the simulation:
 
 ``` r
 library(DoSimPFI2011)
-## basic example code
+## Simulation setting
+n=200; beta=c(1, 0.7); sigma=1; phi=c(-3, 0.5, 0.7)
+suppressWarnings({ 
+ # result with fractional imputation method (method='FI')
+ res_FI <- sim2011(n=n, beta=beta, sigma=sigma, phi=phi, M=100, max.iter=50, eps=1e-09, B=20, method='FI')
+ 
+ # Obtain point estimator of eta1, variance of eta1 under incomplete data, variance of eta1 under complete data
+ point_estimator_eta1 <- colMeans(res_FI$eta1)
+ print(point_estimator_eta1)
+ 
+  # result with calibration fractional imputation method (method='CFI')
+ res_CFI <- sim2011(n=n, beta=beta, sigma=sigma, phi=phi, M=5, max.iter=50, eps=1e-09, B=20, method='CFI')
+ 
+ # Obtain point estimator of eta2, variance of eta2 under incomplete data, variance of eta2 under complete data
+ point_estimator_eta2 <- colMeans(res_CFI$eta2)
+ print(point_estimator_eta2)
+}) 
+#> ℹ SHA-1 hash of file is "343099b74cec49239b107eca4246083f6f2d59c3"
+#> ℹ SHA-1 hash of file is "8a8c6a8be122ca158f5f3a9988351cbdceb5e42d"
+#> [1] 2.40374492 0.01015167 0.00765372
+#> ℹ SHA-1 hash of file is "34595737875a2c3d799e42ddac78319cfae175ce"
+#> ℹ SHA-1 hash of file is "8a8c6a8be122ca158f5f3a9988351cbdceb5e42d"
+#> [1] 0.442510131 0.001560256 0.001235873
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
