@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of DoSimPFI2011 is to …
+The goal of DoSimPFI2011 is to reproduce simulation section in \<doi:
+10.1093/biomet/asq073\>.
 
 ## Installation
 
