@@ -254,20 +254,20 @@ myPFI <- function(n, beta, sigma, phi, M=100, max.iter=50, eps=1e-09, B=2000){
     rst.eta3[a, ] = c(eta3, est_impvar3, est_compvar3)
     rst.eta4[a, ] = c(eta4, est_impvar4, est_compvar4)
 
-    if(a%%100==0){
-      print(a)
-      cat("______eta1__________",'\n')
-      print(round(apply(rst.eta1[1:a,],2,mean), 5))
-      print(round(apply(rst.eta1[1:a,],2,sd), 5))
-      cat("______eta2__________",'\n')
-      print(round(apply(rst.eta2[1:a,],2,mean), 5))
-      print(round(apply(rst.eta2[1:a,],2,sd), 5))
-      cat("______eta3__________",'\n')
-      print(round(apply(rst.eta3[1:a,],2,mean), 5))
-      print(round(apply(rst.eta3[1:a,],2,sd), 5))
-      cat("______eta4__________",'\n')
-      print(round(apply(rst.eta4[1:a,],2,mean), 5))
-      print(round(apply(rst.eta4[1:a,],2,sd), 5))
+    # if(a%%100==0){
+    #   print(a)
+    #   cat("______eta1__________",'\n')
+    #   print(round(apply(rst.eta1[1:a,],2,mean), 5))
+    #   print(round(apply(rst.eta1[1:a,],2,sd), 5))
+    #   cat("______eta2__________",'\n')
+    #   print(round(apply(rst.eta2[1:a,],2,mean), 5))
+    #   print(round(apply(rst.eta2[1:a,],2,sd), 5))
+    #   cat("______eta3__________",'\n')
+    #   print(round(apply(rst.eta3[1:a,],2,mean), 5))
+    #   print(round(apply(rst.eta3[1:a,],2,sd), 5))
+    #   cat("______eta4__________",'\n')
+    #   print(round(apply(rst.eta4[1:a,],2,mean), 5))
+    #   print(round(apply(rst.eta4[1:a,],2,sd), 5))
     }
   }
 
