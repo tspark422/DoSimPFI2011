@@ -310,7 +310,7 @@ myPCFI <- function(n, beta, sigma, phi, M=10, max.iter=50, eps=1e-09, B=2000){
     #   cat("______eta4__________",'\n')
     #   print(round(apply(rst.eta4[1:a,],2,mean), 5))
     #   print(round(apply(rst.eta4[1:a,],2,sd), 5))
-    }
+    # }
   }
   return(list(eta1=rst.eta1, eta2=rst.eta2, eta3=rst.eta3, eta4=rst.eta4))
 }
