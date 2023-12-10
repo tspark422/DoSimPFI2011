@@ -43,10 +43,10 @@ sim2011 <- function(n, beta, sigma, phi, M=100, max.iter=50, eps=1e-09, B=2000, 
 
   # Check method
   if (method=="FI"){
-    devtools::source_url("https://github.com/tspark422/DoSimPFI2011/blob/main/R/myPFI.R?raw=TRUE")
+    devtools::source_url('https://github.com/tspark422/DoSimPFI2011/blob/main/R/myPFI.R?raw=TRUE', sha1="343099b74cec49239b107eca4246083f6f2d59c3")
     res <- myPFI(n=n, beta=beta, sigma=sigma, phi=phi, M=M, max.iter=max.iter, eps=eps, B=B)
   } else if (method=="CFI"){
-    devtools::source_url("https://github.com/tspark422/DoSimPFI2011/blob/main/R/myPCFI.R?raw=TRUE")
+    devtools::source_url('https://github.com/tspark422/DoSimPFI2011/blob/main/R/myPCFI.R?raw=TRUE', sha1="34595737875a2c3d799e42ddac78319cfae175ce")
     res <- myPCFI(n=n, beta=beta, sigma=sigma, phi=phi, M=M, max.iter=max.iter, eps=eps, B=B)
   } else {
     stop("method should be 'FI' or 'CFI'")
