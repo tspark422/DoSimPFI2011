@@ -28,11 +28,12 @@ this function provides remains unchanged as the simulation. That is,
 $\eta_{1} = \mathit{E} \left( Y_{1} \right)$,
 $\eta_{2} = \mathit{E} \left( Y_{2} \right)$, $\eta_{3} = \beta_{1}$,
 and $\eta_{4} = pr\left( y_{1} < 3 \right)$. This is a basic example
-which shows you how to reproduce the simulation:
+which shows you how to reproduce the simulation: Use fractional
+imputation method with the original simulation setting.
 
 ``` r
 library(DoSimPFI2011)
-## Simulation setting
+## Original Simulation setting
 n=200; beta=c(1, 0.7); sigma=1; phi=c(-3, 0.5, 0.7)
 suppressWarnings({ 
  # result with fractional imputation method (method='FI')
@@ -40,17 +41,27 @@ suppressWarnings({
  
  # Obtain point estimator of eta1, variance of eta1 under incomplete data, variance of eta1 under complete data
  point_estimator_eta1 <- colMeans(res_FI$eta1)
- print(point_estimator_eta1)
- 
-  # result with calibration fractional imputation method (method='CFI')
+ point_estimator_eta1
+})
+#> [1] 2.429938002 0.009138512 0.007172959
+```
+
+This is another example using calibration fractional imputation method
+with changed beta
+
+``` r
+library(DoSimPFI2011)
+## Change beta from (1, 0.7) to (2, 0.3)
+n=200; beta=c(2, 0.3); sigma=1; phi=c(-3, 0.5, 0.7)
+suppressWarnings({ 
+ # result with calibration fractional imputation method (method='CFI')
  res_CFI <- sim2011(n=n, beta=beta, sigma=sigma, phi=phi, M=5, max.iter=50, eps=1e-09, B=20, method='CFI')
  
  # Obtain point estimator of eta2, variance of eta2 under incomplete data, variance of eta2 under complete data
  point_estimator_eta2 <- colMeans(res_CFI$eta2)
- print(point_estimator_eta2)
+ point_estimator_eta2
 })
-#> [1] 2.409529727 0.009557791 0.007499019
-#> [1] 0.423092038 0.001568395 0.001220905
+#> [1] 0.447705562 0.001593895 0.001239454
 ```
 
 What is special about using `README.Rmd` instead of just `README.md`?
